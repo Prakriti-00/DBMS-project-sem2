@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Pet Care</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐾 Virtual Pet Care</h1>
+            <p>Manage your virtual pets with love!</p>
+        </header>
 
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('pets')">My Pets</button>
+            <button class="tab-btn" onclick="openTab('activities')">Activities</button>
+            <button class="tab-btn" onclick="openTab('health')">Health Records</button>
+        </div>
+
+        <div id="pets" class="tab-content active">
+            <h2>My Pets</h2>
+            <div class="pet-grid" id="petList"></div>
+           
+            <div class="form-container">
+                <h3>Add New Pet</h3>
+                <form id="petForm">
+                    <input type="text" id="petName" placeholder="Pet Name" required>
+                    <select id="petSpecies" required>
+                        <option value="">Select Species</option>
+                        <option value="Dog">Dog</option>
+                        <option value="Cat">Cat</option>
+                        <option value="Rabbit">Rabbit</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <input type="text" id="petBreed" placeholder="Breed">
+                    <input type="number" id="petAge" placeholder="Age" min="0">
+                    <button type="submit">Add Pet</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="activities" class="tab-content">
+            <h2>Pet Activities</h2>
+            <div id="activityLogs"></div>
+           
+            <div class="form-container">
+                <h3>Log Activity</h3>
+                <form id="activityForm">
+                    <select id="activityPet" required>
+                        <option value="">Select Pet</option>
+                    </select>
+                    <select id="activityType" required>
+                        <option value="">Select Activity</option>
+                        <option value="Walk">Walk</option>
+                        <option value="Play">Play</option>
+                        <option value="Feed">Feed</option>
+                        <option value="Training">Training</option>
+                    </select>
+                    <button type="submit">Log Activity</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="health" class="tab-content">
+            <h2>Health Records</h2>
+            <div id="healthRecords"></div>
+           
+            <div class="form-container">
+                <h3>Add Health Record</h3>
+                <form id="healthForm">
+                    <select id="healthPet" required>
+                        <option value="">Select Pet</option>
+                    </select>
+                    <select id="healthVet" required>
+                        <option value="">Select Veterinarian</option>
+                        <option value="Dr. Smith">Dr. Smith</option>
+                        <option value="Dr. Johnson">Dr. Johnson</option>
+                        <option value="Dr. Williams">Dr. Williams</option>
+                    </select>
+                    <input type="date" id="checkupDate" required>
+                    <textarea id="diagnosis" placeholder="Diagnosis" required></textarea>
+                    <textarea id="treatment" placeholder="Treatment" required></textarea>
+                    <button type="submit">Add Record</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
